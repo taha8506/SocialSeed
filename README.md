@@ -47,7 +47,7 @@
 
 [![Social Seed Screenshot][product-screenshot]](https://i.ibb.co/f0vXw6K/socialseed.png)
 
-Social Seed is a fullstack app that allows the user CRUD functionality and my first full stack application. 
+Social Seed is a fullstack app that allows the user CRUD functionality and my first full stack application. This is a passion project for me to really flex my skills in fullstack development. This apps allows the user to create posts with images, commenting, liking, deleting, user authentication, and more.
 
 ### Built With
 
@@ -103,4 +103,4 @@ To get a local copy up and running follow these simple example steps.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/imgs/screenshot.PNG
