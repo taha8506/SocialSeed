@@ -1,0 +1,128 @@
+<%- include('partials/header') -%>
+
+
+
+  <nav class="flex items-center justify-around flex-wrap bg-white p-6 shadow-md">
+    <div class="flex items-center flex-shrink-0 text-gray-800 mr-6 cursor-pointer">
+      <a class="toggleColour text-black no-underline hover:text-green-700 hover:no-underline font-bold text-2xl lg:text-4xl"
+        href="/">
+        Social Seed
+      </a>
+    </div>
+
+    <div class="text-sm w-64 mr-32">
+    </div>
+    <div>
+      <a href="/profile"><i class="far fa-user text-lg cursor-pointer hover:text-green-700"> </i> Profile</a>
+    </div>
+  </nav>
+
+
+  <div class="inline-flex rounded-md shadow-sm" role="group">
+    <a href="/profile"><button type="button"
+        class="py-2 px-4 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-2 focus:ring-green-700 focus:text-green-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-green-500 dark:focus:text-white">
+        Profile
+      </button>
+    </a>
+    <a href="/feed"><button type="button"
+        class="py-2 px-4 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-green-700 focus:z-10 focus:ring-2 focus:ring-green-700 focus:text-green-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-green-500 dark:focus:text-white">
+        Feed
+      </button>
+    </a>
+  </div>
+
+
+  <div class="bg-green-700 min-h-screen flex pt-10">
+    <div class="w-full">
+      <h2 class="text-center text-white font-bold text-2xl uppercase mb-10">View Post</h2>
+      <div class="bg-white p-5 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/3">
+
+        <div class="container mx-auto my-10 sm:px-20 flex flex-wrap justify-center">
+          <!--  Post  -->
+          <div
+            class=" border-green-700 border-4 rounded-md overflow-hidden w-full lg:w-11/12 md:w-6/12 sm:w-1/12 bg-white mx-3 md:mx-0 lg:mx-0">
+            <div class="w-full flex justify-between p-3">
+              <div class="flex">
+                <span class="pt-1 ml-2 font-bold text-sm">
+                  <%= post.user.userName %>
+                </span>
+              </div>
+              <span class="px-2 hover:bg-gray-300 cursor-pointer rounded">
+                <%if(post.user.userName==user.userName){ %>
+                  <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST">
+                    <button class="fa fa-trash" type="submit"></button>
+                  </form>
+                  <%}%>
+              </span>
+            </div>
+
+            <a href="/post/<%= post._id%>">
+              <img class="w-full bg-cover" src="<%= post.image%>">
+            </a>
+
+            <div class="px-3 pb-2">
+              <div class="pt-2">
+                <i class="far cursor-pointer hover:text-green-700">
+                  <form class="" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+                    <button class=" far fa-heart hover:text-green-700" type="submit"></button>
+                  </form>
+                </i>
+                <span class="text-sm text-gray-400 font-medium">
+                  <%= post.likes%>
+                </span>
+              </div>
+              <div class="pt-1">
+                <div class="mb-2 text-sm">
+                  <span class="font-medium mr-2">
+                    <%= post.user.userName %>
+                  </span>
+                  <b>
+                    <%= post.title %>
+                  </b> <br>
+                  <%= post.caption%>
+                </div>
+              </div>
+              <span>Comments</span>
+              <div class="text-sm text-gray-600 cursor-pointer font-medium">
+                <ul>
+                  <% for(var i=0; i < comments.length; i++) {%>
+                    <li class="text-gray-600 justify-content-between mt-2">
+                      <%= comments[i].user.userName%>: <%= comments[i].comment%>
+                    </li>
+                    <% } %>
+                </ul>
+              </div>
+              <div class="mt-5">
+                <h2>Add a comment</h2>
+                <form action="/comment/createComment/<%= post._id%>" method="POST">
+
+                  <div
+                    class="mb-4 w-full bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+                    <div class="py-2 px-4 bg-white rounded-t-lg dark:bg-gray-800">
+                      <label for="comment" class="sr-only">Your comment</label>
+                      <input type="text" id="comment" name="comment"
+                        class="px-0 w-full text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                        placeholder="Write a comment..." required="">
+                    </div>
+                    <div class="flex justify-between items-center py-2 px-3 border-t dark:border-gray-600">
+                      <button type="submit" value="Upload"
+                        class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-green-700 rounded-lg focus:ring-4 focus:ring-green-200 dark:focus:ring-green-900 hover:bg-green-800">
+                        Post comment
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <%- include('partials/footer') -%>

@@ -1,0 +1,713 @@
+<%- include('partials/header') -%>
+
+    <!-- <main class="container">
+        <div class="row justify-content-around mt-5">
+            <a href="/login" class="col-3 btn btn-primary"> Login</a>
+            <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+        </div>
+    </main> -->
+
+    <body class="leading-normal tracking-normal text-white gradient"
+        style="font-family: 'Source Sans Pro', sans-serif;"></body>
+
+    <!--Nav-->
+    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+            <div class="pl-4 flex items-center">
+                <a class="toggleColour text-black no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+                    href="/">
+
+                    Social Seed
+                </a>
+            </div>
+            <div class="block lg:hidden pr-4">
+                <button id="nav-toggle"
+                    class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+                id="nav-content">
+                <ul class="list-reset lg:flex justify-end flex-1 items-center">
+                    <li class="mr-3">
+                        <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="/signup">Sign
+                            up</a>
+                    </li>
+                </ul>
+                <button id="navAction"
+                    class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    <a href="/login">Log In</a>
+                </button>
+            </div>
+        </div>
+        <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+    </nav>
+    <!--Hero-->
+    <div class="pt-24">
+        <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+            <!--Left Col-->
+            <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+                <h1 class="my-4 text-5xl font-bold leading-tight">
+                    The social network for plants
+                </h1>
+                <p class="leading-normal text-2xl mb-8">
+                    Discover users plants, gardens, strategies and more!
+                </p>
+                <button
+                    class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    <a href="/signup">Sign up</a>
+                </button>
+            </div>
+            <!--Right Col-->
+            <div class="w-full md:w-3/5 py-6 text-center">
+                <img class="w-full md:w-4/5 z-50" src="imgs/plants1.png" />
+            </div>
+        </div>
+    </div>
+    <div class="relative -mt-12 lg:-mt-24">
+        <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path
+                        d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+                        opacity="0.100000001"></path>
+                    <path
+                        d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                        opacity="0.100000001"></path>
+                    <path
+                        d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
+                        id="Path-4" opacity="0.200000003"></path>
+                </g>
+                <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path
+                        d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z">
+                    </path>
+                </g>
+            </g>
+        </svg>
+    </div>
+    <section class="bg-white border-b py-8">
+        <div class="container max-w-5xl mx-auto m-8">
+            <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                Start Your Plants Off Right
+            </h2>
+            <div class="w-full mb-4">
+                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            </div>
+            <div class="flex flex-wrap">
+                <div class="w-5/6 sm:w-1/2 p-6">
+                    <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                        Show others what you are made of
+                    </h3>
+                    <p class="text-gray-600 mb-8">
+                        Share your latest creation with thousands of users and help others getting started.
+                    </p>
+                    <!-- <img class="w-full md:w-3/3 z-50" src="imgs/plant2.png" /> -->
+                </div>
+                <div class="w-full sm:w-1/3 p-6">
+
+                </div>
+
+                <div class="w-2/6 md:w-5/5 py-6 text-center">
+                    <?xml version="1.0" encoding="iso-8859-1"?>
+                    <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 510.321 510.321"
+                        style="enable-background:new 0 0 510.321 510.321;" xml:space="preserve">
+                        <g>
+                            <path style="fill:#AF6D2D;"
+                                d="M361.014,464.243l-43.802-107.068c-11.725-28.663-39.62-47.386-70.588-47.386
+                                s-58.854,20.855-70.579,49.519L118.624,501.79h230.4v-21.333C349.024,472.811,354.085,466.419,361.014,464.243" />
+                            <g>
+                                <path style="fill:#864D18;" d="M221.027,501.787h-34.133v-21.333c0-9.429,7.637-17.067,17.067-17.067l0,0
+                                    c9.429,0,17.067,7.637,17.067,17.067V501.787z" />
+                                <path style="fill:#864D18;" d="M58.894,501.787h-51.2v-29.867c0-14.14,11.46-25.6,25.6-25.6l0,0c14.14,0,25.6,11.46,25.6,25.6
+                                    V501.787z" />
+                                <path style="fill:#864D18;" d="M383.16,501.787h-34.133v-21.333c0-9.429,7.637-17.067,17.067-17.067l0,0
+                                    c9.429,0,17.067,7.637,17.067,17.067V501.787z" />
+                                <path style="fill:#864D18;" d="M459.96,501.787h-34.133v-21.333c0-9.429,7.637-17.067,17.067-17.067l0,0
+                                    c9.429,0,17.067,7.637,17.067,17.067V501.787z" />
+                            </g>
+                            <path style="fill:#5ABA63;" d="M494.094,510.321H93.027c-4.71,0-8.533-3.823-8.533-8.533s3.823-8.533,8.533-8.533h401.067
+                                c4.71,0,8.533,3.823,8.533,8.533S498.804,510.321,494.094,510.321" />
+                            <g>
+                                <path style="fill:#91CF96;"
+                                    d="M251.414,233.146c-1.681,0-3.379-0.034-5.077-0.119l-7.765-0.358l-0.358-7.765
+                                    c-1.331-28.706,8.636-55.219,28.075-74.658c19.439-19.43,45.926-29.44,74.65-28.075l7.765,0.367l0.367,7.765
+                                    c1.331,28.706-8.644,55.211-28.075,74.65C302.708,223.239,278.158,233.146,251.414,233.146" />
+                                <path style="fill:#91CF96;" d="M250.836,158.558l-7.595-3.285c-26.991-11.665-48.478-34.244-58.974-61.943
+                                    c-10.607-28.023-9.387-58.505,3.439-85.837L191.222,0l7.595,3.285c26.982,11.665,48.478,34.244,58.965,61.943
+                                    c10.615,28.023,9.395,58.505-3.43,85.837L250.836,158.558z" />
+                                <path style="fill:#91CF96;"
+                                    d="M246.519,275.704h0.085H246.519z M241.842,284.349c-26.752,0-51.294-9.907-69.581-28.194
+                                    c-19.43-19.439-29.406-45.952-28.075-74.658l0.358-7.765l7.765-0.358c28.74-1.34,55.219,8.636,74.658,28.075
+                                    s29.406,45.952,28.075,74.65l-0.358,7.774l-7.774,0.358C245.213,284.306,243.523,284.349,241.842,284.349L241.842,284.349z" />
+                            </g>
+                            <path style="fill:#AF6D2D;" d="M33.294,476.187c-4.71,0-8.533,3.823-8.533,8.533v17.067h17.067v-17.067
+                                C41.827,480.01,38.004,476.187,33.294,476.187" />
+                            <g>
+                                <path style="fill:#5ABA63;" d="M246.627,356.721c-4.71,0-8.533-3.823-8.533-8.533v-204.8c0-4.71,3.823-8.533,8.533-8.533
+                                    s8.533,3.823,8.533,8.533v204.8C255.16,352.898,251.337,356.721,246.627,356.721" />
+                                <path style="fill:#5ABA63;" d="M246.627,233.146c-2.185,0-4.369-0.836-6.033-2.5c-3.337-3.337-3.337-8.73,0-12.066l51.277-51.277
+                                    c3.337-3.337,8.738-3.337,12.066,0c3.337,3.328,3.337,8.73,0,12.066l-51.277,51.277
+                                    C250.996,232.31,248.812,233.146,246.627,233.146" />
+                                <path style="fill:#5ABA63;" d="M246.627,155.979c-3.533,0-6.835-2.21-8.064-5.743l-26.667-76.885
+                                    c-1.545-4.454,0.811-9.31,5.265-10.863c4.446-1.553,9.31,0.811,10.863,5.274l26.667,76.885c1.545,4.454-0.811,9.31-5.265,10.854
+                                    C248.496,155.826,247.557,155.979,246.627,155.979" />
+                                <path style="fill:#5ABA63;"
+                                    d="M246.627,284.346c-2.185,0-4.369-0.836-6.033-2.5l-51.2-51.2c-3.337-3.337-3.337-8.73,0-12.066
+                                    c3.337-3.337,8.73-3.337,12.066,0l51.2,51.2c3.337,3.337,3.337,8.73,0,12.066C250.996,283.51,248.812,284.346,246.627,284.346" />
+                            </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="w-2/6 md:w-5/5 py-6 text-center">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.449 512.449"
+                        style="enable-background:new 0 0 512.449 512.449;" xml:space="preserve">
+                        <g transform="translate(0 -1)">
+                            <g>
+                                <path style="fill:#F4C44E;" d="M256.2,308.649c-2.022,0-4.053-0.708-5.675-2.159c-3.516-3.14-3.831-8.525-0.7-12.049
+            c21.214-23.834,39.962-90.709,0.128-133.581c-0.239-0.256-0.452-0.512-0.657-0.785c-22.349-25.455-48.99-109.628,1.143-156.331
+            c3.447-3.209,8.858-3.029,12.058,0.418c3.217,3.447,3.029,8.849-0.427,12.058c-23.159,21.589-24.815,52.079-22.118,73.865
+            c3.209,25.95,14.037,49.869,22.596,59.196c0.188,0.205,0.367,0.427,0.538,0.649c46.609,51.046,24.9,127.317-0.512,155.861
+            C260.893,307.685,258.546,308.649,256.2,308.649" />
+                                <path style="fill:#F4C44E;" d="M282.008,223.499c-1.69,0-3.388-0.503-4.873-1.536l-28.041-19.584
+            c-3.874-2.697-4.813-8.013-2.116-11.878c2.705-3.866,8.021-4.813,11.878-2.108l21.385,14.925l17.203-22.238
+            c2.884-3.729,8.235-4.403,11.972-1.527c3.721,2.884,4.412,8.243,1.527,11.972l-22.178,28.663
+            C287.094,222.356,284.568,223.499,282.008,223.499" />
+                                <path style="fill:#F4C44E;" d="M256.266,163.582c-0.597,0-1.203-0.06-1.809-0.188l-35.388-7.637
+            c-4.608-0.99-7.535-5.53-6.545-10.138c0.99-4.608,5.547-7.518,10.138-6.545l27.051,5.837l5.837-27.051
+            c0.998-4.608,5.555-7.526,10.138-6.545c4.617,0.998,7.535,5.53,6.545,10.138l-7.629,35.396
+            C263.733,160.852,260.2,163.582,256.266,163.582" />
+                                <path style="fill:#F4C44E;" d="M232.066,103.874c-2.278,0-4.446-0.905-6.059-2.517l-25.438-25.626
+            c-3.319-3.345-3.302-8.747,0.043-12.066c3.328-3.328,8.73-3.311,12.075,0.034l19.217,19.371l18.091-19.2
+            c3.226-3.439,8.627-3.593,12.058-0.367c3.43,3.234,3.593,8.636,0.358,12.066l-24.132,25.626c-1.587,1.681-3.789,2.645-6.093,2.679
+            H232.066z" />
+                                <path style="fill:#F4C44E;" d="M235.157,52.649c-1.374,0-2.731-0.333-3.977-0.981c-1.997-1.058-3.499-2.859-4.173-5.026
+            l-10.735-34.577c-1.399-4.497,1.118-9.284,5.615-10.675c4.523-1.408,9.293,1.126,10.684,5.615l8.201,26.436l26.428-8.209
+            c4.523-1.399,9.293,1.126,10.684,5.623c1.399,4.497-1.118,9.284-5.615,10.675l-34.577,10.735
+            C236.856,52.521,236.011,52.649,235.157,52.649" />
+                                <path style="fill:#F4C44E;" d="M271.383,283.249c-0.956,0-1.92-0.162-2.842-0.486c-2.133-0.759-3.883-2.33-4.855-4.369
+            l-15.616-32.657c-2.039-4.258-0.239-9.353,4.011-11.383c4.258-2.039,9.344-0.239,11.383,4.019l11.938,24.969l24.96-11.947
+            c4.267-2.039,9.335-0.239,11.375,4.019c2.039,4.25,0.239,9.344-4.011,11.383l-32.657,15.616
+            C273.909,282.967,272.638,283.249,271.383,283.249" />
+                            </g>
+                            <g>
+                                <path style="fill:#F9D70B;" d="M350.066,308.649c-2.022,0-4.053-0.708-5.675-2.159c-3.516-3.14-3.831-8.525-0.7-12.049
+            c21.214-23.834,39.962-90.709,0.128-133.581c-0.239-0.256-0.452-0.512-0.657-0.785c-22.349-25.455-48.99-109.628,1.143-156.331
+            c3.447-3.209,8.858-3.029,12.058,0.418c3.217,3.447,3.029,8.849-0.427,12.058c-23.159,21.589-24.815,52.079-22.118,73.865
+            c3.209,25.95,14.037,49.869,22.596,59.196c0.188,0.205,0.367,0.427,0.538,0.649c46.609,51.046,24.9,127.317-0.512,155.861
+            C354.76,307.685,352.413,308.649,350.066,308.649" />
+                                <path style="fill:#F9D70B;" d="M375.875,223.499c-1.69,0-3.388-0.503-4.873-1.536l-28.041-19.584
+            c-3.874-2.697-4.813-8.013-2.116-11.878c2.705-3.866,8.013-4.813,11.878-2.108l21.385,14.925l17.203-22.238
+            c2.884-3.729,8.235-4.403,11.972-1.527c3.721,2.884,4.412,8.243,1.527,11.972l-22.178,28.663
+            C380.961,222.356,378.435,223.499,375.875,223.499" />
+                                <path style="fill:#F9D70B;" d="M350.133,163.582c-0.597,0-1.203-0.06-1.809-0.188l-35.388-7.637
+            c-4.608-0.99-7.535-5.53-6.545-10.138c0.99-4.608,5.555-7.518,10.138-6.545l27.051,5.837l5.837-27.051
+            c0.998-4.608,5.564-7.526,10.138-6.545c4.617,0.998,7.535,5.53,6.545,10.138l-7.629,35.396
+            C357.6,160.852,354.067,163.582,350.133,163.582" />
+                                <path style="fill:#F9D70B;" d="M325.932,103.874c-2.278,0-4.446-0.905-6.059-2.517l-25.438-25.626
+            c-3.319-3.345-3.302-8.747,0.043-12.066c3.328-3.328,8.73-3.311,12.075,0.034L325.77,83.07l18.091-19.2
+            c3.226-3.439,8.627-3.593,12.058-0.367c3.43,3.234,3.593,8.636,0.358,12.066l-24.132,25.626c-1.587,1.681-3.789,2.645-6.093,2.679
+            H325.932z" />
+                                <path style="fill:#F9D70B;" d="M329.024,52.649c-1.374,0-2.731-0.333-3.977-0.981c-1.997-1.058-3.499-2.859-4.173-5.026
+            L310.14,12.065c-1.399-4.497,1.118-9.284,5.615-10.675c4.523-1.408,9.293,1.126,10.684,5.615l8.201,26.436l26.428-8.209
+            c4.514-1.399,9.293,1.126,10.684,5.623c1.399,4.497-1.118,9.284-5.615,10.675l-34.577,10.735
+            C330.722,52.521,329.877,52.649,329.024,52.649" />
+                                <path style="fill:#F9D70B;" d="M365.25,283.249c-0.956,0-1.92-0.162-2.842-0.486c-2.133-0.759-3.883-2.33-4.855-4.369
+            l-15.616-32.657c-2.039-4.258-0.239-9.353,4.011-11.383c4.258-2.039,9.353-0.239,11.383,4.019l11.938,24.969l24.96-11.947
+            c4.258-2.039,9.335-0.239,11.375,4.019c2.039,4.25,0.239,9.344-4.011,11.383l-32.657,15.616
+            C367.776,282.967,366.504,283.249,365.25,283.249" />
+                                <path style="fill:#F9D70B;" d="M162.333,308.649c-2.022,0-4.053-0.708-5.675-2.159c-3.516-3.14-3.831-8.525-0.7-12.049
+            c21.214-23.834,39.962-90.709,0.128-133.581c-0.239-0.256-0.452-0.512-0.657-0.785c-22.349-25.455-48.99-109.628,1.143-156.331
+            c3.447-3.209,8.858-3.029,12.058,0.418c3.217,3.447,3.029,8.849-0.427,12.058c-23.159,21.589-24.815,52.079-22.118,73.865
+            c3.209,25.95,14.037,49.869,22.596,59.196c0.188,0.205,0.367,0.427,0.538,0.649c46.609,51.046,24.9,127.317-0.512,155.861
+            C167.026,307.685,164.68,308.649,162.333,308.649" />
+                                <path style="fill:#F9D70B;" d="M188.141,223.499c-1.69,0-3.388-0.503-4.873-1.536l-28.041-19.584
+            c-3.874-2.697-4.813-8.013-2.116-11.878s8.021-4.813,11.878-2.108l21.385,14.925l17.203-22.238
+            c2.884-3.729,8.243-4.403,11.972-1.527c3.721,2.884,4.412,8.243,1.527,11.972L194.9,220.188
+            C193.227,222.356,190.701,223.499,188.141,223.499" />
+                                <path style="fill:#F9D70B;" d="M162.4,163.582c-0.597,0-1.203-0.06-1.809-0.188l-35.388-7.637
+            c-4.608-0.99-7.535-5.53-6.545-10.138c0.99-4.608,5.564-7.518,10.138-6.545l27.051,5.837l5.837-27.051
+            c0.998-4.608,5.547-7.526,10.138-6.545c4.617,0.998,7.535,5.53,6.545,10.138l-7.629,35.396
+            C169.866,160.852,166.334,163.582,162.4,163.582" />
+                                <path style="fill:#F9D70B;" d="M138.199,103.874c-2.278,0-4.446-0.905-6.059-2.517l-25.438-25.626
+            c-3.319-3.345-3.302-8.747,0.043-12.066c3.328-3.328,8.73-3.311,12.075,0.034l19.217,19.371l18.091-19.2
+            c3.226-3.439,8.619-3.593,12.058-0.367c3.43,3.234,3.593,8.636,0.358,12.066l-24.132,25.626c-1.587,1.681-3.789,2.645-6.093,2.679
+            H138.199z" />
+                                <path style="fill:#F9D70B;" d="M141.291,52.649c-1.374,0-2.731-0.333-3.977-0.981c-1.997-1.058-3.499-2.859-4.173-5.026
+            l-10.735-34.577c-1.399-4.497,1.118-9.284,5.615-10.675c4.531-1.408,9.293,1.126,10.684,5.615l8.201,26.436l26.428-8.209
+            c4.523-1.399,9.293,1.126,10.684,5.623c1.399,4.497-1.118,9.284-5.615,10.675l-34.577,10.735
+            C142.989,52.521,142.144,52.649,141.291,52.649" />
+                                <path style="fill:#F9D70B;" d="M177.516,283.249c-0.956,0-1.92-0.162-2.842-0.486c-2.133-0.759-3.883-2.33-4.855-4.369
+            l-15.616-32.657c-2.039-4.258-0.239-9.353,4.011-11.383c4.258-2.039,9.344-0.239,11.383,4.019l11.938,24.969l24.96-11.947
+            c4.267-2.039,9.344-0.239,11.375,4.019c2.039,4.25,0.239,9.344-4.011,11.383l-32.657,15.616
+            C180.042,282.967,178.771,283.249,177.516,283.249" />
+                            </g>
+                            <polygon style="fill:#AF8066;"
+                                points="145.291,504.916 367.158,504.916 367.158,334.249 145.291,334.249 	" />
+                            <g>
+                                <polygon style="fill:#D9AA94;" points="367.158,411.049 307.425,470.782 256.225,419.582 205.025,470.782 145.291,411.049 
+            145.291,359.849 205.025,419.582 256.225,368.382 307.425,419.582 367.158,359.849 		" />
+                                <polygon style="fill:#D9AA94;"
+                                    points="136.758,334.249 375.691,334.249 375.691,300.116 136.758,300.116 		" />
+                            </g>
+                            <path style="fill:#F0EDE0;" d="M409.825,513.449h-307.2c-4.71,0-8.533-3.823-8.533-8.533s3.823-8.533,8.533-8.533h307.2
+        c4.719,0,8.533,3.823,8.533,8.533S414.543,513.449,409.825,513.449" />
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="w-2/6 md:w-5/5 py-6 text-center">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                            <polygon style="fill:#AF8066;"
+                                points="143.186,503.322 368.814,503.322 368.814,329.763 143.186,329.763 	" />
+                            <g>
+                                <polygon style="fill:#D9AA94;" points="368.814,407.864 308.068,468.61 256,416.542 203.932,468.61 143.186,407.864 
+            143.186,355.797 203.932,416.542 256,364.475 308.068,416.542 368.814,355.797 		" />
+                                <polygon style="fill:#D9AA94;"
+                                    points="134.508,329.763 377.492,329.763 377.492,295.051 134.508,295.051 		" />
+                            </g>
+                            <path style="fill:#F0EDE0;" d="M412.203,512H99.797c-4.79,0-8.678-3.888-8.678-8.678s3.888-8.678,8.678-8.678h312.407
+        c4.79,0,8.678,3.888,8.678,8.678S416.994,512,412.203,512" />
+                            <g>
+                                <path style="fill:#91CF96;" d="M143.186,295.051c0-121.856-130.169,8.678-130.169,8.678c0-50.619,28.203-130.169,112.814-130.169
+            c2.352,0.903,69.424-11.229,69.424,121.492H143.186z" />
+                                <path style="fill:#91CF96;" d="M368.814,295.051c0-121.856,130.169,8.678,130.169,8.678c0-50.619-28.203-130.169-112.814-130.169
+            c-2.352,0.903-69.424-11.229-69.424,121.492H368.814z" />
+                            </g>
+                            <path style="fill:#5ABA63;" d="M247.322,295.051c0-228.899,76.748-261.693,182.237-216.949c0,0-112.814,32.273-112.814,216.949
+        H247.322z" />
+                            <path style="fill:#91CF96;" d="M247.322,295.051c0-105.186,16.236-168.873,43.989-202.743C284.472,30.642,223.336,0,177.898,0
+        c16.644,16.644,41.845,42.617,43.251,131.159C237.256,165.767,247.556,217.938,247.322,295.051" />
+                            <path style="fill:#5ABA63;" d="M39.051,104.136c54.645,0,97.462,36.734,124.347,82.441c16.358,14.397,31.857,44.674,31.857,108.475
+        h52.068C248.363-48.918,40.222,102.174,39.051,104.136" />
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                    </svg>
+                </div>
+
+            </div>
+            <div class="flex flex-wrap flex-col-reverse sm:flex-row">
+                <div class="w-full sm:w-1/2 p-6 mt-6">
+
+                </div>
+                <div class="w-full sm:w-1/2 p-6 mt-6">
+                    <div class="align-middle">
+                        <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                            Grow Your Garden With Us
+                        </h3>
+                        <p class="text-gray-600 mb-8">
+                            Caring for plants can be very rewarding. This platform gives you access to a multitude
+                            of users tips, tricks, and progress to help you showcase your dream garden.
+
+                        </p>
+                    </div>
+
+                </div>
+                <div class="w-full md:w-5/5 py-6 text-center">
+                    <img class="w-full md:w-5/5 z-50" src="imgs/plants.png" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="bg-white border-b py-8">
+            <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+                <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                    Make Your Garden
+                </h2>
+                <div class="w-full mb-4">
+                    <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                </div>
+                <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+                    <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+                            <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+                                xGETTING STARTED
+                            </p>
+                            <div class="w-full font-bold text-xl text-gray-800 px-6">
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <p class="text-gray-800 text-base px-6 mb-5">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc
+                                commodo posuere et sit
+                                amet ligula.
+                            </p>
+                        </a>
+                    </div>
+                    <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+                        <div class="flex items-center justify-start">
+                            <button
+                                class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                Action
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+                    <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+                            <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+                                xGETTING STARTED
+                            </p>
+                            <div class="w-full font-bold text-xl text-gray-800 px-6">
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <p class="text-gray-800 text-base px-6 mb-5">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc
+                                commodo posuere et sit
+                                amet ligula.
+                            </p>
+                        </a>
+                    </div>
+                    <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+                        <div class="flex items-center justify-center">
+                            <button
+                                class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                Action
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+                    <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+                            <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+                                xGETTING STARTED
+                            </p>
+                            <div class="w-full font-bold text-xl text-gray-800 px-6">
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                            <p class="text-gray-800 text-base px-6 mb-5">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc
+                                commodo posuere et sit
+                                amet ligula.
+                            </p>
+                        </a>
+                    </div>
+                    <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+                        <div class="flex items-center justify-end">
+                            <button
+                                class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                Action
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-gray-100 py-8">
+            <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
+                <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                    Pricing
+                </h2>
+                <div class="w-full mb-4">
+                    <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4">
+                    <div
+                        class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+                        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+                            <div class="p-8 text-3xl font-bold text-center border-b-4">
+                                Free
+                            </div>
+                            <ul class="w-full text-center text-sm">
+                                <li class="border-b py-4">Thing</li>
+                                <li class="border-b py-4">Thing</li>
+                                <li class="border-b py-4">Thing</li>
+                            </ul>
+                        </div>
+                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+                            <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
+                                £0
+                                <span class="text-base">for one user</span>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <button
+                                    class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                    Sign Up
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
+                        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+                            <div class="w-full p-8 text-3xl font-bold text-center">Basic</div>
+                            <div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
+                            <ul class="w-full text-center text-base font-bold">
+                                <li class="border-b py-4">Thing</li>
+                                <li class="border-b py-4">Thing</li>
+                                <li class="border-b py-4">Thing</li>
+                                <li class="border-b py-4">Thing</li>
+                            </ul>
+                        </div>
+                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+                            <div class="w-full pt-6 text-4xl font-bold text-center">
+                                £x.99
+                                <span class="text-base">/ per user</span>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <button
+                                    class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                    Sign Up
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
+                        <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
+                            <div class="p-8 text-3xl font-bold text-center border-b-4">
+                                Pro
+                            </div>
+                            <ul class="w-full text-center text-sm">
+                                <li class="border-b py-4">Thing</li>
+                                <li class="border-b py-4">Thing</li>
+                                <li class="border-b py-4">Thing</li>
+                            </ul>
+                        </div>
+                        <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+                            <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
+                                £x.99
+                                <span class="text-base">/ per user</span>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <button
+                                    class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                    Sign Up
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    <!-- Change the colour #f8fafc to match the previous section colour -->
+    <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
+                <g class="wave" fill="#f8fafc">
+                    <path
+                        d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z">
+                    </path>
+                </g>
+                <g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
+                    <g
+                        transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+                        <path
+                            d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+                            opacity="0.100000001"></path>
+                        <path
+                            d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                            opacity="0.100000001"></path>
+                        <path
+                            d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
+                            opacity="0.200000003"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </svg>
+    <section class="container mx-auto text-center py-6 mb-12">
+        <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
+            Sign Up Today For Free
+        </h2>
+        <div class="w-full mb-4">
+            <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+        </div>
+        <h3 class="my-4 text-3xl leading-tight">
+            Treat your self to some peaceful plant browsing!
+        </h3>
+        <button
+            class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="/signup">Sign
+                up</a>
+        </button>
+    </section>
+
+    <!-- jQuery if you need it
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        -->
+    <script>
+        var scrollpos = window.scrollY;
+        var header = document.getElementById("header");
+        var navcontent = document.getElementById("nav-content");
+        var navaction = document.getElementById("navAction");
+        var brandname = document.getElementById("brandname");
+        var toToggle = document.querySelectorAll(".toggleColour");
+
+        document.addEventListener("scroll", function () {
+            /*Apply classes for slide in bar*/
+            scrollpos = window.scrollY;
+
+            if (scrollpos > 10) {
+                header.classList.add("bg-white");
+                navaction.classList.remove("bg-white");
+                navaction.classList.add("gradient");
+                navaction.classList.remove("text-gray-800");
+                navaction.classList.add("text-white");
+                //Use to switch toggleColour colours
+                for (var i = 0; i < toToggle.length; i++) {
+                    toToggle[i].classList.add("text-gray-800");
+                    toToggle[i].classList.remove("text-white");
+                }
+                header.classList.add("shadow");
+                navcontent.classList.remove("bg-gray-100");
+                navcontent.classList.add("bg-white");
+            } else {
+                header.classList.remove("bg-white");
+                navaction.classList.remove("gradient");
+                navaction.classList.add("bg-white");
+                navaction.classList.remove("text-white");
+                navaction.classList.add("text-gray-800");
+                //Use to switch toggleColour colours
+                for (var i = 0; i < toToggle.length; i++) {
+                    toToggle[i].classList.add("text-white");
+                    toToggle[i].classList.remove("text-gray-800");
+                }
+
+                header.classList.remove("shadow");
+                navcontent.classList.remove("bg-white");
+                navcontent.classList.add("bg-gray-100");
+            }
+        });
+    </script>
+    <script>
+        /*Toggle dropdown list*/
+        /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+        var navMenuDiv = document.getElementById("nav-content");
+        var navMenu = document.getElementById("nav-toggle");
+
+        document.onclick = check;
+        function check(e) {
+            var target = (e && e.target) || (event && event.srcElement);
+
+            //Nav Menu
+            if (!checkParent(target, navMenuDiv)) {
+                // click NOT on the menu
+                if (checkParent(target, navMenu)) {
+                    // click on the link
+                    if (navMenuDiv.classList.contains("hidden")) {
+                        navMenuDiv.classList.remove("hidden");
+                    } else {
+                        navMenuDiv.classList.add("hidden");
+                    }
+                } else {
+                    // click both outside link and outside menu, hide menu
+                    navMenuDiv.classList.add("hidden");
+                }
+            }
+        }
+        function checkParent(t, elm) {
+            while (t.parentNode) {
+                if (t == elm) {
+                    return true;
+                }
+                t = t.parentNode;
+            }
+            return false;
+        }
+    </script>
+    </body>
+
+
+    <%- include('partials/footer') -%>
