@@ -12,7 +12,7 @@
     <a href="https://github.com/taha8506/SocialSeed"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://social-seed-app.herokuapp.com/">View Demo</a>
+    <a href="https://socialseed.cyclic.app/">View Demo</a>
    
   </p>
 </div>
